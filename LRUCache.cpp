@@ -45,6 +45,5 @@ void set(int key, int val) {
 
 int main()
 {
-
     return 0;
 }

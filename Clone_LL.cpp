@@ -23,54 +23,42 @@ void Print(Node* node) {
 }
 
 Node* findCloneLL(Node* node) {
+    if (node == NULL) {
+        return node;
+    }
+    
     Node* curr = node;
-    Node* tmp = NULL;
-
     // Insert additional node after every node
     // 1->2->3 ==> 1->1->2->2->3->3
     while (curr) {
-        tmp = curr->next;
-        curr->next = newNode(curr->val);
-        curr->next->next = tmp;
+        Node* newnode = new Node(curr->val);
+        Node* tmp = curr->next;
+        curr->next = newnode;
+        newnode->next = tmp;
         curr = tmp;
     }
 
     curr = node;
     // Adjusting the random pointers of the newly added node
     while (curr) {
-        if (curr->next) {
-            if (curr->random) {
-                curr->next->random = curr->random->next;
-            } else {
-                curr->next->random = curr->random;
-            }
-            curr = curr->next->next;
-        } else {
-            curr = curr->next;
+        if (curr->random) {
+            curr->next->random = curr->random->next;
         }
+        curr = curr->next->next;
     }
 
-    Node* org = node;
-    Node* cpy = node->next;
-    tmp = cpy;
+    curr = node;
+    Node* ans = node->next;
     // Separate Original and Duplicate LL
-    while (org && cpy) {
-        if (org->next) {
-            org->next = org->next->next;
-        } else {
-            org->next = org->next;
+    while (curr) {
+        Node* tmp = curr->next;
+        curr->next = tmp->next;
+        curr = curr->next;
+        if (tmp->next) {
+            tmp->next = curr->next;
         }
-        if (cpy->next) {
-            cpy->next = cpy->next->next;
-        } else {
-            cpy->next = cpy->next;
-        }
-
-        org = org->next;
-        cpy = cpy->next;
     }
-
-    return tmp;
+    return ans;
 }
 
 int main()

@@ -89,10 +89,20 @@ void solve() {
         }
     }
     
-    //Use following if output words are unique and sorted
-    //sort(res.begin(), res.end());
-    //res.erase(unique(res.begin(), res.end()), res.end());
-    
+    //Uncomment the following code if output words are unique and sorted
+    /*
+    set<string>st;
+    for (int i = 0; i < res.size(); i++) {
+        string ss = res[i];
+        st.insert(ss);
+    }
+    res.clear();
+    set<string>::iterator it;
+    for (it = st.begin(); it != st.end(); it++) {
+        string ss = *it;
+        res.push_back(ss);
+    }
+    */
     for (int i = 0; i < res.size(); i++) {
         cout << res[i] << " ";
     }

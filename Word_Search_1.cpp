@@ -4,9 +4,9 @@ using namespace std;
 
 #define MAX_SIZE 1000009
 
+int n, m, num;
 char word[105][105];
 vector<string>dict;
-int n, m, num;
 
 struct TrieNode {
     struct Trie {
@@ -45,6 +45,7 @@ struct TrieNode {
     }
 };
 TrieNode root;
+
 vector<string>res;
 int X[4] = {-1, 0, 1, 0};
 int Y[4] = {0, 1, 0, -1};
@@ -88,7 +89,21 @@ void solve() {
             findWord(i, j, "", ptr);
         }
     }
-
+    
+    //Uncomment the following code if output words are unique and sorted
+    /*
+    set<string>st;
+    for (int i = 0; i < res.size(); i++) {
+        string ss = res[i];
+        st.insert(ss);
+    }
+    res.clear();
+    set<string>::iterator it;
+    for (it = st.begin(); it != st.end(); it++) {
+        string ss = *it;
+        res.push_back(ss);
+    }
+    */
     for (int i = 0; i < res.size(); i++) {
         cout << res[i] << " ";
     }

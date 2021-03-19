@@ -88,7 +88,11 @@ void solve() {
             findWord(i, j, "", ptr);
         }
     }
-
+    
+    //Use following if output words are unique and sorted
+    //sort(res.begin(), res.end());
+    //res.erase(unique(res.begin(), res.end()), res.end());
+    
     for (int i = 0; i < res.size(); i++) {
         cout << res[i] << " ";
     }

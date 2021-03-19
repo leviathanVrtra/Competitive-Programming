@@ -4,9 +4,9 @@ using namespace std;
 
 #define MAX_SIZE 1000009
 
+int n, m, num;
 char word[105][105];
 vector<string>dict;
-int n, m, num;
 
 struct TrieNode {
     struct Trie {
@@ -45,6 +45,7 @@ struct TrieNode {
     }
 };
 TrieNode root;
+
 vector<string>res;
 int X[4] = {-1, 0, 1, 0};
 int Y[4] = {0, 1, 0, -1};

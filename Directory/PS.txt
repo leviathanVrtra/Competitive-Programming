@@ -1,0 +1,17 @@
+The computer OS uses an organizational unit called “directory” to organize folders and files into a hierarchical structure. 
+A directory contains multiple files and other directories, and it provides a user with a logical file group. 
+ 
+A directory uses “/” as a separator character and shows its route within the file system. 
+“/” may represent a root directory or a hierarchical relationship between parent directories and subdirectories. 
+For instance, “/aa/bb/” indicates that under the root directory, there is the “aa” directory, beneath which lies the “bb” directory. 
+
+There are various features related to a directory, but you will implement the following 5 features in this problem:  	
+
+- Create a directory  
+- Remove a directory 
+- Copy a directory 
+- Move a directory 
+- Check the number of subdirectories 
+
+How to compile multiple files
+	-> g++ Main.cpp User.cpp -o dict

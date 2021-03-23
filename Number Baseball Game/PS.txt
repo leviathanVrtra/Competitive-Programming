@@ -1,0 +1,22 @@
+The number baseball game is played by 2 players.The game participants are denoted as Player 1 and Player 2. 
+
+①Player 1 thinks of a 4-digit number whose digits are different from each other.
+(Let’s call this number the “thoughtnumber”. This thought number can start with 0)
+ 
+② Player 2 assumes and guesses a 4-digit number whose digits are different fromeach other
+(This number is called the “asked number”.The asked number also can start with 0). 
+ 
+③ Player 1 compares the thought and asked number and tells the number ofstrikes and balls. 
+ 
+④ The number of strikes is the number of digits which are in the thought numberand in the asked number respectively and whose positions in both numbers areidentical.
+ 
+⑤ The number of balls is the number of digits which are in the thought number andin the asked number respectively but whose positions in both number are notidentical.
+ 
+⑥ If the thought and asked numbers match with each other, the game is ended. 
+ 
+⑦ If the thought and asked numbers do not match with each other, one will goback to step ② and repeat the process.
+ 
+Forinstance, suppose Player 1 thought of a 4-digit number such as ‘1234’. 
+ 
+IfPlayer 2 asks ‘4139’, Player 1 will tell 1 strike and 2 balls.
+When the numbers ‘1234’ and ‘4139’ are compared, both numbers contain each ‘1’,‘3’ and ‘4’. Among them, in case of ‘3’ even the position matches with eachother. Position ‘1’ and ‘4’, however, do not match.

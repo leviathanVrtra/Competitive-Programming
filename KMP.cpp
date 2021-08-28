@@ -19,6 +19,27 @@ void getLps(string str, vector<int>& lps) {
     }
 }
 
+// Method No - 01
+void kmp1(string pat, string txt) {
+    int n = txt.size();
+    int m = pat.size();
+
+    if (m == 0) return;
+
+    string str = pat + "#" + txt;
+    n = str.size();
+    vector<int>lps(n, 0);
+
+    getLps(str, lps);
+    
+    for (int i = 0; i < n; i++) {
+        if (lps[i] == m) {
+            cout << "Idx No : " << (i - m - m) << endl;
+        }
+    }
+}
+
+// Method No - 02
 void kmp(string pat, string text) {
     int m = pat.size();
     int n = text.size();
@@ -76,5 +97,6 @@ int main()
     string pat, text;
     cin >> text >> pat;
     kmp(pat, text);
+    kmp1(pat, text);
     return 0;
 }

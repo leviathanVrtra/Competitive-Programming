@@ -47,6 +47,26 @@ void kmp(string pat, string text) {
 }
 
 /*
+// https://leetcode.com/problems/shortest-palindrome/
+// Longest palindromic prefix
+void shortestPalindrome(string str) {
+    string temp = str + '#';
+    reverse(str.begin(), str.end());
+    temp += str;
+
+    int n = temp.length();
+    vector<int>lps(n, 0);
+
+    int idx = getLps(str, lps);
+    
+    string tmp = str.substr(idx, (n - idx + 1));
+    reverse(tmp.begin(), tmp.end());
+    tmp = tmp + str;
+    
+    cout << tmp << endl;
+}
+*/
+/*
 ABABDABACDABABCABAB
 ABABCABAB
 */
